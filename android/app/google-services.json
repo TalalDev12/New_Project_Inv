@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "865174620654",
+    "project_id": "easy-invoice-maker-cfda2",
+    "storage_bucket": "easy-invoice-maker-cfda2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865174620654:android:ea323742d1e3863e25a6ff",
+        "android_client_info": {
+          "package_name": "com.xonasolutions.easyinvoicemaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865174620654-56mt12qnpumacs2nkglslvc3un4vl615.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xonasolutions.easyinvoicemaker",
+            "certificate_hash": "6355a281dff9bb2cbf829c742eb6827e5b273ccf"
+          }
+        },
+        {
+          "client_id": "865174620654-s90hdlatdtcslvn3kei0k86pq0i55sct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xonasolutions.easyinvoicemaker",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "865174620654-fh7fahs0dhd3pp0h91ummv96srgns19a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGpOo9KXMD4ucQSDVmblHSsSSa36dKu6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865174620654-fh7fahs0dhd3pp0h91ummv96srgns19a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

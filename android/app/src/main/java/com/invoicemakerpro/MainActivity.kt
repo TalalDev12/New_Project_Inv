@@ -1,4 +1,4 @@
-package com.invoicemakerpro
+package com.xonasolutions.easyinvoicemaker
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
