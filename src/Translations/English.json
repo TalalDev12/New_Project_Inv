@@ -1,0 +1,22 @@
+{
+    "invoiceTitle": "INVOICE",
+    "dateCreated": "DATE CREATED",
+    "dueDate": "DUE DATE",
+    "from": "FROM",
+    "billTo": "BILL TO",
+    "grandTotal":"Grand Total",
+    "signature":"Signature",
+    "items":"Items",
+    "unitprice":"Unit Price",
+    "quantity":"Quantity",
+    "discount":"Discount",
+    "total":"Total",
+    "shipping":"Shipping",
+    "price":"Price"
+
+
+
+
+
+  }
+  

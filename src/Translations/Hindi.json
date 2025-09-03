@@ -1,0 +1,18 @@
+{
+    "invoiceTitle": "चालान",
+    "dateCreated": "तारीख बनाई गई",
+    "dueDate": "अंतिम तिथि",
+    "from": "से",
+    "billTo": "बिल प्राप्तकर्ता",
+    "grandTotal": "कुल राशि",
+    "signature": "हस्ताक्षर",
+    "items": "वस्तुएं",
+    "unitprice": "इकाई मूल्य",
+    "quantity": "मात्रा",
+    "discount": "छूट",
+    "total": "कुल",
+    "shipping":"शिपिंग शुल्क",
+    "price":"कीमत"
+
+  }
+  

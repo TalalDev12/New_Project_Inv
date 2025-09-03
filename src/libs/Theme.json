@@ -1,0 +1,179 @@
+{
+  "colors": {
+
+    "primary": "#1777ff",
+
+    
+    "secondary": "#2ecc71",
+    "darkText": "#979797",
+    "headerBackground": "#e8f4f9",
+    
+    "lightBlackText":"#51595E",
+    "lightBlueBorder":"#cdebf7",
+    "lighIcon":"#a8b6c2",
+    "facebookBlue":"#264c8f",
+    "whatsAppGreen":"#1bbc56",
+    "instagramOrange":"#d72642",
+    "youtubeRed":"#ff507e",
+    "inActiveTint": "#878790",
+    "imagePlaceholder":"#ecedf2",
+    "searchPlaceholder":"#808080",
+    "productTitleColor":"#51595E",
+    "extraLightBlueButton": "#EDF7FB",
+    "searchbarBackground" :"#d5d5d6", 
+  "uploadImageBackground":"#D9DDE780",
+  "inputPlaceholderColor":"#647589",
+  "lightBlueColor":"#eaeef7",
+  "lightGreen":"#b1f0ba",
+  "lightRed":"#f0b1b1",
+
+
+
+  
+
+     
+
+    
+
+    
+    "lightBlueButton": "#00c6c3",
+    "inputBackground": "#edeef0",
+    "greyText": "#51595E",
+    "accent": "#e74c3c",
+    "background": "#f9fbfd",
+    "text": "#2c3e50",
+    "purpleLight": "#EAE6EE",
+    "yellowLight": "#FAF4E6",
+    "link": "#2980b9",
+    "border": "#bdc3c7",
+    "offWhite": "#FBFBFB",
+    "white": "#FFF",
+    "borderColor": "#0A84FF",
+    "black": "#000",
+    "lightblack": "rgba(51, 51, 51, 0.5)",
+    "lightWhite": "#F8F8F8",
+    "error": "#EC495D",
+    "success": "#6CC070",
+    "iconColor": "#555555",
+    "InputBg": "#F0F0F0",
+    "dark": "#505050",
+    "grey": "#818484",
+    "gray20": "#333333",
+    "Gray94": "rgba(240, 240, 240, 0.5)",
+    "purple": "#67088A",
+    "darkTransparent": "rgba(0,0,0,0.45)",
+    "lightTransparent": "rgba(255,255,255,0.45)",
+    "blackLowOpacity": "rgba(0, 0, 0, 0.5)",
+    "checkbox": "#F5F5F5",
+    "yellowbg": "#EEDEB0",
+    "purplebg": "#BFB1CC",
+    "darkYellow": "#C89401",
+    "lightgray": "#edeef0",
+    "darkgraye": "#BBBBBB",
+    "DarkGray": "#A9AEAF",
+    "DarkBlack": "#232832",
+    "Green": "#17A600",
+    "Red": "#FF0000",
+    "Yellow": "#F6B116",
+    "Skyblue": "#3371E4",
+    "lightred": "#EA4359",
+    "darkPurple": "#102258",
+    "extremeDarkPurple": "#310259",
+    "lightpurple": "#D0B2DB",
+    "black30": "rgba(0, 0, 0, 0.3)",
+    "white50": "rgba(255, 255, 255, 0.40)",
+    "white70": "rgba(255, 255, 255, 0.57)",
+    "White100": "#FFFFFF",
+    "Purpel900": "#202548",
+    "RedLight": "#FF0000",
+    "extremeGrey": "#858fbb",
+    "greyTextColor": "#9389b4",
+    "extremeGrey": "#858fbb",
+    "black70": "rgba(51, 51, 51, 0.75)"
+  },
+  "typography": {
+    "heading": {
+      "fontFamily": "Roboto-Bold",
+      "fontWeight": "bold"
+    },
+    "body": {
+      "fontFamily": "Roboto-Regular",
+      "fontWeight": "normal"
+    },
+    "caption": {
+      "fontFamily": "Roboto-Light",
+      "fontWeight": "normal"
+    }
+  },
+  "grardiant": {
+    "purplegradient": "#310359",
+    "orangegradient": "#C89401"
+  },
+  "borders": {
+    "miniRadius": 4,
+    "normalRadius": 8,
+    "regularRadius": 10,
+    "fullRadius": 30,
+    "width": 1
+  },
+  "shadows": {
+    "small": {
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "width": 0,
+        "height": 2
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 2
+    },
+    "medium": {
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "width": 0,
+        "height": 4
+      },
+      "shadowOpacity": 0.3,
+      "shadowRadius": 4
+    },
+    "large": {
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "width": 0,
+        "height": 6
+      },
+      "shadowOpacity": 0.4,
+      "shadowRadius": 6
+    }
+  },
+  "elevation": {
+    "small": 2,
+    "medium": 4,
+    "large": 6
+  },
+  "fontFamily": {
+    "Montserrat-Bold": "Montserrat-Bold",
+    "Montserrat-Black": "Montserrat-Black",
+    "Montserrat-ExtraBold": "Montserrat-ExtraBold",
+    "Montserrat-ExtraLight": "Montserrat-ExtraLight",
+    "Montserrat-Light": "Montserrat-Light",
+    "Montserrat-Medium": "Montserrat-Medium",
+    "Montserrat-Regular": "Montserrat-Regular",
+    "Montserrat-SemiBold": "Montserrat-SemiBold",
+    "Montserrat-Thin":"Montserrat-Thin",
+    "Montserrat-ThinItalic":"Montserrat-ThinItalic"
+
+    
+
+
+
+  
+  
+
+
+
+
+   
+    
+
+  }
+}

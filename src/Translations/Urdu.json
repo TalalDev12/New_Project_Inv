@@ -1,0 +1,18 @@
+{
+    "invoiceTitle": "رسید",
+    "dateCreated": "تاریخ جاری",
+    "dueDate": "آخری تاریخ",
+    "from": "کمپنی",
+    "billTo": "بل وصول کنندہ",
+    "grandTotal": "کل رقم",
+    "signature": "دستخط",
+    "items": "اشیاء",
+    "unitprice": "یونٹ قیمت",
+    "quantity": "مقدار",
+    "discount": "رعایت",
+    "total": "کل",
+    "shipping":"شپنگ چارجز",
+    "price":"قیمت"
+
+  }
+  

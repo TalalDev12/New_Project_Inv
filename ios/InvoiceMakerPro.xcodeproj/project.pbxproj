@@ -7,24 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0849AEBE0EC3472FA716CA16 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB31A647C676464BB98EF235 /* Montserrat-Light.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-InvoiceMakerPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-InvoiceMakerPro.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		50CA738D6DFE9F131D446BB6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		5D917871E28D4FE8A7F7DD65 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0272E224CF694D00BC4617EA /* Montserrat-Bold.ttf */; };
+		6671DADFD6A34AF5B5201DC4 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0B5670F362E415F9EF3250B /* Montserrat-Medium.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C39F530C026540F49952862E /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E0F467FC724E6A9EE2ACED /* Montserrat-ExtraBold.ttf */; };
+		C9A089D314924E6192DBC1C4 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 318763A3B52C456CAAE1A135 /* Montserrat-Thin.ttf */; };
+		D658A21411D64F7892F4FC68 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439405B76D93441A823C60A5 /* Montserrat-SemiBold.ttf */; };
+		D82EEB785C2948728A572C18 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1885022D5D346209EA39DF0 /* Montserrat-ExtraLight.ttf */; };
+		F494E8D857284401B2C5E6BF /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F880025E97024D139C69525E /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0272E224CF694D00BC4617EA /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* InvoiceMakerPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvoiceMakerPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = InvoiceMakerPro/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = InvoiceMakerPro/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = InvoiceMakerPro/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		318763A3B52C456CAAE1A135 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Thin.ttf"; path = "../assets/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-InvoiceMakerPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceMakerPro.debug.xcconfig"; path = "Target Support Files/Pods-InvoiceMakerPro/Pods-InvoiceMakerPro.debug.xcconfig"; sourceTree = "<group>"; };
+		439405B76D93441A823C60A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-InvoiceMakerPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceMakerPro.release.xcconfig"; path = "Target Support Files/Pods-InvoiceMakerPro/Pods-InvoiceMakerPro.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-InvoiceMakerPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InvoiceMakerPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = InvoiceMakerPro/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = InvoiceMakerPro/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1885022D5D346209EA39DF0 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLight.ttf"; path = "../assets/fonts/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		C0B5670F362E415F9EF3250B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		E0E0F467FC724E6A9EE2ACED /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.ttf"; path = "../assets/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F880025E97024D139C69525E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		FB31A647C676464BB98EF235 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.ttf"; path = "../assets/fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +91,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				C635732E765F4608AE971712 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +113,22 @@
 				5709B34CF0A7D63546082F79 /* Pods-InvoiceMakerPro.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C635732E765F4608AE971712 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0272E224CF694D00BC4617EA /* Montserrat-Bold.ttf */,
+				E0E0F467FC724E6A9EE2ACED /* Montserrat-ExtraBold.ttf */,
+				A1885022D5D346209EA39DF0 /* Montserrat-ExtraLight.ttf */,
+				FB31A647C676464BB98EF235 /* Montserrat-Light.ttf */,
+				C0B5670F362E415F9EF3250B /* Montserrat-Medium.ttf */,
+				F880025E97024D139C69525E /* Montserrat-Regular.ttf */,
+				439405B76D93441A823C60A5 /* Montserrat-SemiBold.ttf */,
+				318763A3B52C456CAAE1A135 /* Montserrat-Thin.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +194,14 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				50CA738D6DFE9F131D446BB6 /* PrivacyInfo.xcprivacy in Resources */,
+				5D917871E28D4FE8A7F7DD65 /* Montserrat-Bold.ttf in Resources */,
+				C39F530C026540F49952862E /* Montserrat-ExtraBold.ttf in Resources */,
+				D82EEB785C2948728A572C18 /* Montserrat-ExtraLight.ttf in Resources */,
+				0849AEBE0EC3472FA716CA16 /* Montserrat-Light.ttf in Resources */,
+				6671DADFD6A34AF5B5201DC4 /* Montserrat-Medium.ttf in Resources */,
+				F494E8D857284401B2C5E6BF /* Montserrat-Regular.ttf in Resources */,
+				D658A21411D64F7892F4FC68 /* Montserrat-SemiBold.ttf in Resources */,
+				C9A089D314924E6192DBC1C4 /* Montserrat-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
