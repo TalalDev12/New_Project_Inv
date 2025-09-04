@@ -826,7 +826,7 @@ ${taxRows}
       
       `,
         fileName: "invoice",
-        directory: "Download",
+        directory: Platform.OS === "ios" ? "Documents" : undefined,
       };
 
       const pdf = await RNHTMLtoPDF.convert(options);

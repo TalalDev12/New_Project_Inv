@@ -797,7 +797,8 @@ ${taxRows}
       
       `,
         fileName: "invoice",
-        directory: "Download",
+      
+        directory: Platform.OS === "ios" ? "Documents" : undefined,
       };
 
       const pdf = await RNHTMLtoPDF.convert(options);
@@ -807,8 +808,9 @@ ${taxRows}
 
       const shareOptions = {
         title: "Share Invoice",
-        url: `file://${filePath}`,
+        url: Platform.OS === "android" ? `file://${filePath}` : filePath,
         type: "application/pdf",
+        failOnCancel: false
       };
 
       await Share.open(shareOptions);
