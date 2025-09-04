@@ -16,6 +16,8 @@ export const images = {
   yellowTemplate:require('../assets/Images/yellowTemplate.png'),
   newBlueTemplate:require('../assets/Images/newBlueTemplate.png'),
   redGreyTemplate:require('../assets/Images/redGreyTemplate.png'),
+  colorPicker:require('../assets/Images/colorPicker.png'),
+
 
 
 

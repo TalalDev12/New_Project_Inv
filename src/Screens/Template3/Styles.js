@@ -256,5 +256,36 @@ alignItems:'center'
     // backgroundColor:'red',
     // width: getWidth(50),
   },
+  colorPicker:{
+    height:getHeight(2.5),
+    width:getWidth(5)
+  },
+  colorPickerWrapper:{
+    marginTop:getHeight(1),
+    flexDirection:'row',
+    alignItems:'center',
+    backgroundColor:Theme.colors.white,
+    borderRadius:Theme.borders.fullRadius,
+    paddingHorizontal:getWidth(0.5),
+    paddingRight:getWidth(2),
+    paddingVertical:getHeight(0.1)
+  },
+  colorPickerText:{
+    marginLeft:getWidth(1),
+    fontSize:AppFonts.t4_5,
+    color:Theme.colors.black,
+    fontFamily:Theme.fontFamily["Montserrat-SemiBold"]
+  },
+  selectedColorCircle:{
+    height:getHeight(2.5),
+    width:getWidth(5),
+    backgroundColor:Theme.colors.Red,
+    borderRadius:Theme.borders.fullRadius,
+  },
+  colorPickerMainRow:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginHorizontal:getWidth(6)
+  }
 });
 export default styles;

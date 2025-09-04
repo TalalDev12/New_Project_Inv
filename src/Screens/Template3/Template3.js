@@ -424,16 +424,18 @@ export default function Template1({ route }) {
         <div class="container">
       
         ${
-          (selectedBusiness?.logo || invoiceDetails?.businessLogo)
+          selectedBusiness?.logo || invoiceDetails?.businessLogo
             ? `
               <div class="logo">
                 <img 
-                  src="${selectedBusiness?.logo || invoiceDetails?.businessLogo}" 
+                  src="${
+                    selectedBusiness?.logo || invoiceDetails?.businessLogo
+                  }" 
                   alt="Business Logo"
                 />
               </div>
             `
-            : ''
+            : ""
         }
         
   
@@ -476,7 +478,9 @@ export default function Template1({ route }) {
             <p>
             <span 
             style="color: ${
-              selectedSubTitlesColor ? selectedSubTitlesColor : Theme.colors.black
+              selectedSubTitlesColor
+                ? selectedSubTitlesColor
+                : Theme.colors.black
             }; font-weight:bold; font-size:18px;"
             >
               INVOICE#
@@ -500,7 +504,9 @@ export default function Template1({ route }) {
             ${
               startDate
                 ? startDate
-                : new Date(invoiceDetails.dateCreated).toISOString().split("T")[0]
+                : new Date(invoiceDetails.dateCreated)
+                    .toISOString()
+                    .split("T")[0]
             }
           </span>
         </p>
@@ -615,16 +621,15 @@ export default function Template1({ route }) {
                 <th>${t("items")}</th>
                 <th>${t("quantity")}</th>
                 <th>${t("price")} (${
-                  selectedCurrency
-                  ? selectedCurrency.currencyCode
-                  : invoiceDetails?.currency
+          selectedCurrency
+            ? selectedCurrency.currencyCode
+            : invoiceDetails?.currency
         })</th>
                 <th>${t("discount")}%</th>
                 <th>${t("total")} (${
-                  selectedCurrency
-                  ? selectedCurrency.currencyCode
-                  : invoiceDetails?.currency
-         
+          selectedCurrency
+            ? selectedCurrency.currencyCode
+            : invoiceDetails?.currency
         })</th>
               </tr>
             </thead>
@@ -836,18 +841,18 @@ ${taxRows}
 
       let newFilePath = filePath;
       if (Platform.OS === "android") {
-        const destPath = `${RNFS.DownloadDirectoryPath}/invoice.pdf`; 
+        const destPath = `${RNFS.DownloadDirectoryPath}/invoice.pdf`;
         await RNFS.copyFile(filePath, destPath);
         newFilePath = destPath;
       }
-      
-            const shareOptions = {
-              title: "Share Invoice",
-              // url: Platform.OS === "android" ? `file://${filePath}` : filePath,
-              url: Platform.OS === "android" ? `file://${newFilePath}` : newFilePath,
-              type: "application/pdf",
-              failOnCancel: false
-            };
+
+      const shareOptions = {
+        title: "Share Invoice",
+        // url: Platform.OS === "android" ? `file://${filePath}` : filePath,
+        url: Platform.OS === "android" ? `file://${newFilePath}` : newFilePath,
+        type: "application/pdf",
+        failOnCancel: false,
+      };
 
       await Share.open(shareOptions);
     } catch (error) {
@@ -870,7 +875,6 @@ ${taxRows}
         <ImageBackground
           source={images.redGreyTemplate}
           style={styles.blueTemplate}
-       
         >
           <View
             onPress={() =>
@@ -878,27 +882,31 @@ ${taxRows}
             }
             style={styles.dataBox}
           >
-
-{(selectedBusiness?.logo || invoiceDetails?.businessLogo) && (
-  <View style={styles.logoWrapper}>
-    <Image
-      style={styles.businessLogo}
-      source={{
-        uri: selectedBusiness?.logo || invoiceDetails?.businessLogo,
-      }}
-    />
-  </View>
-)}
-
-
+            {(selectedBusiness?.logo || invoiceDetails?.businessLogo) && (
+              <View style={styles.logoWrapper}>
+                <Image
+                  style={styles.businessLogo}
+                  source={{
+                    uri: selectedBusiness?.logo || invoiceDetails?.businessLogo,
+                  }}
+                />
+              </View>
+            )}
 
             <View style={styles.dataBoxInner}>
               <View style={styles.invAndMeta}>
-              <View>
-                  <Text style={[styles.invTitle,{color:selectedInvoiceTextColor?selectedInvoiceTextColor:Theme.colors.black}]}>
-                  {invoiceTitle
-                        ? invoiceTitle
-                        : invoiceDetails?.invoiceTitle}
+                <View>
+                  <Text
+                    style={[
+                      styles.invTitle,
+                      {
+                        color: selectedInvoiceTextColor
+                          ? selectedInvoiceTextColor
+                          : Theme.colors.black,
+                      },
+                    ]}
+                  >
+                    {invoiceTitle ? invoiceTitle : invoiceDetails?.invoiceTitle}
                   </Text>
                 </View>
 
@@ -913,40 +921,74 @@ ${taxRows}
                   />
                 </View> */}
 
-<View style={styles.metaWrap}>
+                <View style={styles.metaWrap}>
                   <View>
-                    <Text style={[styles.invTitleText, {
-                      color: selectedSubTitlesColor
-                        ? selectedSubTitlesColor
-                        : Theme.colors.black,
-                    },]}>
-                      {t("invoiceTitle")}</Text>
-                    <Text style={[styles.invTitleText, {
-                      color: selectedSubTitlesColor
-                        ? selectedSubTitlesColor
-                        : Theme.colors.black,
-                    },]}>{t("dateCreated")}</Text>
-                   
+                    <Text
+                      style={[
+                        styles.invTitleText,
+                        {
+                          color: selectedSubTitlesColor
+                            ? selectedSubTitlesColor
+                            : Theme.colors.black,
+                        },
+                      ]}
+                    >
+                      {t("invoiceTitle")}
+                    </Text>
+                    <Text
+                      style={[
+                        styles.invTitleText,
+                        {
+                          color: selectedSubTitlesColor
+                            ? selectedSubTitlesColor
+                            : Theme.colors.black,
+                        },
+                      ]}
+                    >
+                      {t("dateCreated")}
+                    </Text>
+
                     {invoiceDetails?.Status === "UNPAID" && (
-                       <Text style={[styles.invTitleText, {
-                        color: selectedSubTitlesColor
-                          ? selectedSubTitlesColor
-                          : Theme.colors.black,
-                      },]}>{t("dueDate")}</Text>
+                      <Text
+                        style={[
+                          styles.invTitleText,
+                          {
+                            color: selectedSubTitlesColor
+                              ? selectedSubTitlesColor
+                              : Theme.colors.black,
+                          },
+                        ]}
+                      >
+                        {t("dueDate")}
+                      </Text>
                     )}
                     {invoiceDetails?.Status === "PAID" && (
-                      <Text style={[styles.invTitleText, {
-                        color: selectedSubTitlesColor
-                          ? selectedSubTitlesColor
-                          : Theme.colors.black,
-                      },]}>INVOICE STATUS</Text>
+                      <Text
+                        style={[
+                          styles.invTitleText,
+                          {
+                            color: selectedSubTitlesColor
+                              ? selectedSubTitlesColor
+                              : Theme.colors.black,
+                          },
+                        ]}
+                      >
+                        INVOICE STATUS
+                      </Text>
                     )}
                     {newInvoiveStatus === "PAID" && (
-                      <Text style={[styles.invTitleText, {
-                        color: selectedSubTitlesColor
-                          ? selectedSubTitlesColor
-                          : Theme.colors.black,
-                      },]}>INVOICE STATUS</Text>
+                      <Text
+                        style={[
+                          styles.invTitleText,
+                          {
+                            color: selectedSubTitlesColor
+                              ? selectedSubTitlesColor
+                              : Theme.colors.black,
+                          },
+                        ]}
+                      >
+                        INVOICE STATUS
+                      </Text>
                     )}
                   </View>
                   <View>
@@ -967,17 +1009,18 @@ ${taxRows}
                           : "" // fallback if no date
                       }
                     </Text>
-                   
 
-{invoiceDetails?.Status === "UNPAID" && (
-  <Text style={styles.invDescText}>
-    {endDate 
-      ? new Date(endDate).toISOString().split("T")[0] 
-      : invoiceDetails?.DueIn 
-        ? new Date(invoiceDetails.DueIn).toISOString().split("T")[0] 
-        : ""}
-  </Text>
-)}
+                    {invoiceDetails?.Status === "UNPAID" && (
+                      <Text style={styles.invDescText}>
+                        {endDate
+                          ? new Date(endDate).toISOString().split("T")[0]
+                          : invoiceDetails?.DueIn
+                          ? new Date(invoiceDetails.DueIn)
+                              .toISOString()
+                              .split("T")[0]
+                          : ""}
+                      </Text>
+                    )}
 
                     {invoiceDetails?.Status === "PAID" && (
                       <Text style={styles.invDescText}>PAID</Text>
@@ -1589,19 +1632,73 @@ ${taxRows}
           }
         />
 
-        <Text onPress={() => setOpenHeaderBgModal(true)}>
-          Select Heading Bg Color
-        </Text>
+       <View style={styles.colorPickerMainRow}>
+       <TouchableOpacity   onPress={() => setOpenHeaderBgModal(true)} style={styles.colorPickerWrapper}>
+          {selectedColor ? (
+             <View style={[styles.selectedColorCircle,{backgroundColor:selectedColor}]}></View>
+          ):(
+            <Image source={images.colorPicker} style={styles.colorPicker} />
+          )}
 
-        <Text onPress={() => setOpenHeaderTextModal(true)}>
-          Select Heading Text Color
-        </Text>
+          <Text
+            style={styles.colorPickerText}
+          
+          >
+           Table Heading Background
+          </Text>
+        
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => setOpenHeaderTextModal(true)} style={styles.colorPickerWrapper}>
+          {selectedTextColor ? (
+             <View style={[styles.selectedColorCircle,{backgroundColor:selectedTextColor}]}></View>
+          ):(
+            <Image source={images.colorPicker} style={styles.colorPicker} />
+          )}
 
-        <Text onPress={() => setOpenTitleTextModal(true)}>Invoice Title</Text>
+          <Text
+            style={styles.colorPickerText}
+          
+          >
+           Table Heading Text Color
+          </Text>
+        
+        </TouchableOpacity>
+       </View>
 
-        <Text onPress={() => setOpenSubTitlesModal(true)}>Sub Titles</Text>
+       <View style={styles.colorPickerMainRow}>
+       <TouchableOpacity   onPress={() => setOpenTitleTextModal(true)} style={styles.colorPickerWrapper}>
+          {selectedInvoiceTextColor ? (
+             <View style={[styles.selectedColorCircle,{backgroundColor:selectedInvoiceTextColor}]}></View>
+          ):(
+            <Image source={images.colorPicker} style={styles.colorPicker} />
+          )}
 
-        <Text style={{ color: selectedSubTitlesColor }}>head</Text>
+          <Text
+            style={styles.colorPickerText}
+          
+          >
+           Invoice Title Color
+          </Text>
+        
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => setOpenSubTitlesModal(true)} style={styles.colorPickerWrapper}>
+          {selectedSubTitlesColor ? (
+             <View style={[styles.selectedColorCircle,{backgroundColor:selectedSubTitlesColor}]}></View>
+          ):(
+            <Image source={images.colorPicker} style={styles.colorPicker} />
+          )}
+
+          <Text
+            style={styles.colorPickerText}
+          
+          >
+           Sub Titles Color
+          </Text>
+        
+        </TouchableOpacity>
+       </View>
+
+     
 
         <Button title="Share" onPress={handleSharePDF} />
       </ScrollView>
