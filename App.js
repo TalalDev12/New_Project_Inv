@@ -6,26 +6,26 @@ import { View, Text, Alert, Platform } from 'react-native';
 import React, { useEffect } from 'react';
 import StackNavigation from './src/Navigations/StackNavigation';
 import { AppProvider } from './src/Context/AppContext';
-// import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import Purchases from 'react-native-purchases';
 import messaging from '@react-native-firebase/messaging';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 export default function App() {
-  // useEffect(() => {
-  //   GoogleSignin.configure({
-  //     webClientId: '865174620654-olordd82qa67gg8k16s8aaannr6savsg.apps.googleusercontent.com',
-  //     offlineAccess: false,
-  //   });
-  // }, []);
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: '865174620654-olordd82qa67gg8k16s8aaannr6savsg.apps.googleusercontent.com',
+      offlineAccess: false,
+    });
+  }, []);
 
-  const REVENUECAT_API_KEY = Platform.select({
-    android: 'goog_dtAWjDAZzGJIPYYBtQeBVcaanlQ',
-    ios: 'appl_OnaeLjMienSgowklsmhiroopNPx'
-  });
+  // const REVENUECAT_API_KEY = Platform.select({
+  //   android: 'goog_dtAWjDAZzGJIPYYBtQeBVcaanlQ',
+  //   ios: 'appl_OnaeLjMienSgowklsmhiroopNPx'
+  // });
 
-  Purchases.configure({ apiKey: REVENUECAT_API_KEY });
+  // Purchases.configure({ apiKey: REVENUECAT_API_KEY });
 
   // -----------------------------
   // 1️⃣ Request Notification Permission

@@ -202,12 +202,12 @@ export default function Home() {
             >
               Unpaid Invoices
             </Text>
-            <Text
+            {/* <Text
               onPress={() => navigation.navigate("SubscriptionScreen")}
               style={styles.boxHeading}
             >
               Unpaid Invoices
-            </Text>
+            </Text> */}
 
             <Text style={[styles.boxAmount, { color: Theme.colors.Red }]}>
               ${totalUnpaid}
