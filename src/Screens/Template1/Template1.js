@@ -834,9 +834,17 @@ ${taxRows}
 
       Alert.alert("Success", `PDF generated at ${filePath}`);
 
+      let newFilePath = filePath;
+if (Platform.OS === "android") {
+  const destPath = `${RNFS.DownloadDirectoryPath}/invoice.pdf`; 
+  await RNFS.copyFile(filePath, destPath);
+  newFilePath = destPath;
+}
+
       const shareOptions = {
         title: "Share Invoice",
-        url: Platform.OS === "android" ? `file://${filePath}` : filePath,
+        // url: Platform.OS === "android" ? `file://${filePath}` : filePath,
+        url: Platform.OS === "android" ? `file://${newFilePath}` : newFilePath,
         type: "application/pdf",
         failOnCancel: false
       };
