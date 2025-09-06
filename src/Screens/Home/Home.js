@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Image,
   Alert,
+  Dimensions,
 } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import styles from "./Styles";
@@ -16,6 +17,14 @@ import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import NativeModal from "../../Components/Common/NativeModal";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
 
 import DatePicker from "react-native-date-picker";
 import dayjs from "dayjs";
@@ -230,6 +239,41 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [invoices]);
 
+
+
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [{ data: [] }],
+  });
+  
+  useEffect(() => {
+    if (invoices.length > 0) {
+      // group invoices by month
+      const monthlyTotals = {};
+  
+      invoices.forEach((invoice) => {
+        const month = dayjs(invoice.dateCreated).format("MMMM"); // "January", "February"
+        if (!monthlyTotals[month]) {
+          monthlyTotals[month] = 0;
+        }
+        monthlyTotals[month] += parseFloat(invoice.amount || 0);
+      });
+  
+      // prepare chart labels and values
+      const labels = Object.keys(monthlyTotals);
+      const data = Object.values(monthlyTotals);
+  
+      setChartData({
+        labels,
+        datasets: [{ data }],
+      });
+    }
+  }, [invoices]);
+
+  
+  
+  
+
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -334,9 +378,8 @@ export default function Home() {
 
         
 
-        <Text onPress={() => setOpenDateModal(true)} style={{ fontSize: 25 }}>
-          Filter By Date
-        </Text>
+        
+        <AppIcons.filterIcon onPress={() => setOpenDateModal(true)}  size={25} color={Theme.colors.black}/>
 
         {selectedDate && selectedEndDate &&(
           <Text>These are filtered Invoices
@@ -347,6 +390,81 @@ export default function Home() {
            
           </Text>
         )}
+
+        {/* chart start */}
+
+
+
+
+{/* 
+        <View style={{alignSelf:'center'}}>
+  <Text>Bezier Line Chart Currency Rs.</Text>
+  <LineChart
+    // data={{
+    //   labels: ["January", "February", "March", "April", "May", "June"],
+    //   datasets: [
+    //     {
+    //       data: [
+    //         // Math.random() * 100,
+    //         // Math.random() * 100,
+    //         // Math.random() * 100,
+    //         // Math.random() * 100,
+    //         // Math.random() * 100,
+    //         // Math.random() * 100
+    //         100,
+    //         50,
+    //         300,
+    //         70,
+    //         200,
+    //         450
+    //       ]
+    //     }
+    //   ]
+    // }}
+
+    data={chartData}
+    width={getWidth(95)} // from react-native
+    height={260}
+    yAxisLabel=""
+    yAxisSuffix=""
+    yAxisInterval={1} // optional, defaults to 1
+    chartConfig={{
+      backgroundColor: "#e26a00",
+      backgroundGradientFrom: "#fb8c00",
+      backgroundGradientTo: "#ffa726",
+      decimalPlaces: 2, // optional, defaults to 2dp
+      color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      style: {
+        borderRadius: 16
+      },
+      propsForDots: {
+        r: "6",
+        strokeWidth: "2",
+        stroke: "#ffa726"
+      }
+    }}
+    bezier
+    style={{
+      marginVertical: 8,
+      borderRadius: 6,
+    }}
+  />
+</View>    */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* chart end */}
 
         <FlatList
           inverted
