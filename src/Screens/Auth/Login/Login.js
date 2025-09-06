@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Alert,
   Button,
+  Platform,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "./Styles";
@@ -240,7 +241,7 @@ export default function Login() {
           </View>
         </View>
         <Text style={styles.forgotPasswordText}>
-          Already have an Account?
+          Don't have an Account?
           <Text
             onPress={() => navigation.navigate("Signup")}
             style={styles.forgotPasswordTextSignup}
@@ -250,23 +251,42 @@ export default function Login() {
           </Text>
         </Text>
       </View>
-
-     <TouchableOpacity       onPress={handleAppleLogin} style={{height:40,width:90,backgroundColor:'red',alignItems:'center',justifyContent:'center'}}>
-     <AppleButton
-        buttonType={AppleButton.Type.SIGN_IN}
-        buttonStyle={AppleButton.Style.BLACK}
-        cornerRadius={8}
-        style={{ width: 290, height: 40 }}
-        onPress={handleAppleLogin}
-      />
-
-     </TouchableOpacity>
-
       <View style={styles.Button}>
         <SaveButton onPress={handleLogin} title={"Login"} />
       </View>
 
-      <Button onPress={handleGoogleLogin} title="google login" />
+    {Platform.OS === 'ios' ? (
+        <TouchableOpacity
+        onPress={handleAppleLogin}
+        style={{ alignSelf: "center", marginTop: 12 }}
+      >
+        <AppleButton
+          buttonType={AppleButton.Type.SIGN_IN}
+          buttonStyle={AppleButton.Style.BLACK}
+          cornerRadius={8}
+          style={{ width: 290, height: 40 }}
+          onPress={handleAppleLogin}
+        />
+      </TouchableOpacity>
+    ):null}
+
+      <TouchableOpacity
+        onPress={handleGoogleLogin}
+        style={{
+          alignSelf: "center",
+          height: 39,
+          width: "67%",
+          backgroundColor: "black",
+          marginTop: 12,
+          borderRadius: Theme.borders.normalRadius,
+          alignItems:'center',
+          justifyContent:'center'
+        }}
+      >
+        <Text style={{color:Theme.colors.white}}>Sign in with Google</Text>
+      </TouchableOpacity>
+
+      
     </View>
   );
 }
