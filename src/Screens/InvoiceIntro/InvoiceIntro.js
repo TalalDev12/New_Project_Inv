@@ -238,9 +238,10 @@ export default function InvoiceIntro() {
             date={new Date(selectedDate)}
             title="Select Create Date"
             mode="date"
-            onConfirm={(date) =>
-              setSelectedDate(dayjs(date).format("YYYY-MM-DD"))
-            }
+            onConfirm={(date) =>{
+              setSelectedDate(dayjs(date).format("YYYY-MM-DD"));
+              setOpenDatePicker(false);
+            }}
             onCancel={() => setOpenDatePicker(false)}
           />
 
@@ -250,9 +251,10 @@ export default function InvoiceIntro() {
             date={new Date(selectedEndDate)}
             title="Select Due Date"
             mode="date"
-            onConfirm={(date) =>
-              setSelectedEndDate(dayjs(date).format("YYYY-MM-DD"))
-            }
+            onConfirm={(date) =>{
+              setSelectedEndDate(dayjs(date).format("YYYY-MM-DD"));
+              setOpenDateEndPicker(false)
+            }}
             onCancel={() => setOpenDateEndPicker(false)}
           />
         </View>

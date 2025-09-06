@@ -17,6 +17,9 @@ import axios from "axios";
 import NativeModal from "../../Components/Common/NativeModal";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import DatePicker from "react-native-date-picker";
+import dayjs from "dayjs";
+
 // import notifee from '@notifee/react-native';
 const StatusData = [
   { id: 1, status: "UNPAID" },
@@ -33,6 +36,13 @@ export default function Home() {
   const [invoiceId, setInvoiceId] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [selectedInvoice, setSelectedInvoice] = useState("");
+  const [openDateModal, setOpenDateModal] = useState(false);
+  const [openDatePicker, setOpenDatePicker] = useState(false);
+  const [openDateEndPicker, setOpenDateEndPicker] = useState(false);
+
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedEndDate, setSelectedEndDate] = useState(null);
+  
 
   const requestNotificationPermission = async () => {
     if (Platform.OS === "android" && Platform.Version >= 33) {
@@ -63,6 +73,14 @@ export default function Home() {
     requestNotificationPermission();
   }, []);
 
+  // useEffect(() => {
+  //   // test with hardcoded range
+  //   const startDate = "2025-09-06";
+  //   const endDate = "2025-09-07";
+
+  //   getInvoicesList(startDate, endDate);
+  // }, []);
+
   const filteredInvoices = invoices.filter((invoice) => {
     if (selectedFilter === "All") return true;
     return invoice.Status === selectedFilter;
@@ -78,12 +96,16 @@ export default function Home() {
   const totalUnpaid = getTotalAmount("UNPAID");
   const totalPaid = getTotalAmount("PAID");
 
-  const getInvoicesList = async () => {
+  const getInvoicesList = async (startDate, endDate) => {
     try {
       const token = await AsyncStorage.getItem("userToken");
 
-      const url =
+      let url =
         "https://invoice-maker-app-wsshi.ondigitalocean.app/api/invoice";
+
+      if (startDate && endDate) {
+        url += `?startDate=${startDate}&endDate=${endDate}`;
+      }
 
       const response = await axios.get(url, {
         headers: {
@@ -92,8 +114,6 @@ export default function Home() {
       });
 
       if (response.status === 200) {
-        console.log("✅ Invoices fetched:", response.data);
-
         setInvoices(response.data);
       }
     } catch (error) {
@@ -104,6 +124,32 @@ export default function Home() {
       Alert.alert("Error", error.message);
     }
   };
+
+  // const getInvoicesList = async () => {
+  //   try {
+  //     const token = await AsyncStorage.getItem("userToken");
+
+  //     // hard-coded dates (YYYY-MM-DD format)
+  //     const startDate = "2025-09-01";
+  //     const endDate = "2025-09-06";
+
+  //     let url = "https://invoice-maker-app-wsshi.ondigitalocean.app/api/invoice";
+  //     url += `?startDate=${startDate}&endDate=${endDate}`;
+
+  //     const response = await axios.get(url, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+
+  //     if (response.status === 200) {
+  //       setInvoices(response.data);
+  //     }
+  //   } catch (error) {
+  //     console.log("❌ Error fetching invoices:", error.response?.data || error.message);
+  //     Alert.alert("Error", error.message);
+  //   }
+  // };
 
   const updateInvoice = async (invoiceId, status) => {
     const data = {
@@ -285,6 +331,22 @@ export default function Home() {
             </Text>
           </TouchableOpacity>
         </View>
+
+        
+
+        <Text onPress={() => setOpenDateModal(true)} style={{ fontSize: 25 }}>
+          Filter By Date
+        </Text>
+
+        {selectedDate && selectedEndDate &&(
+          <Text>These are filtered Invoices
+            From {selectedDate} to {selectedEndDate}
+
+            <Text onPress={()=>{setSelectedDate(null),setSelectedEndDate(null);getInvoicesList()}}> Reset  </Text>
+
+           
+          </Text>
+        )}
 
         <FlatList
           inverted
@@ -468,6 +530,102 @@ export default function Home() {
           color={Theme.colors.white}
         />
       </TouchableOpacity>
+
+      <NativeModal
+        visible={openDateModal}
+        modalTitle={"Filter Invoices By Date"}
+        children={
+          <View style={{ paddingVertical: getHeight(1) }}>
+          <View style={styles.datePickerMainWrapper}>
+
+          <TouchableOpacity
+          
+          onPress={() => {
+            setOpenDatePicker(true);
+          
+          }}
+          
+          
+          style={styles.dateWrapper}>
+              <Text style={styles.dateText}>{selectedDate ? selectedDate : 'Start Date'}</Text>
+            </TouchableOpacity>
+            <AppIcons.ArrowDown color={Theme.colors.black} size={23}/>
+            <TouchableOpacity
+
+               
+          onPress={() => {
+            setOpenDateEndPicker(true);
+           
+          }}
+            
+            style={styles.dateWrapper}>
+              <Text style={styles.dateText}>{selectedEndDate ? selectedEndDate :'End Date'}</Text>
+            </TouchableOpacity>
+
+            <DatePicker
+            modal
+            open={openDatePicker}
+            date={selectedDate ? new Date(selectedDate) : new Date()} 
+            title="Select Start Date"
+            mode="date"
+            onConfirm={(date) =>{
+              setSelectedDate(dayjs(date).format("YYYY-MM-DD"));
+              setOpenDatePicker(false);
+            }}
+            onCancel={() => setOpenDatePicker(false)}
+          />
+
+          <DatePicker
+            modal
+            open={openDateEndPicker}
+            date={selectedEndDate ? new Date(selectedDate) : new Date()} 
+            
+            title="Select End Date"
+            mode="date"
+            onConfirm={(date) =>{
+              setSelectedEndDate(dayjs(date).format("YYYY-MM-DD"));
+              setOpenDateEndPicker(false);
+            }}
+            onCancel={() => setOpenDateEndPicker(false)}
+          />
+
+
+
+
+          </View>
+
+           
+              <View style={styles.actionButtonWrapper}>
+              <TouchableOpacity
+              onPress={() => setOpenDateModal(false)}
+              style={[
+                styles.saveButtonWrapLanguage,
+                { backgroundColor: Theme.colors.Red },
+              ]}
+            >
+              <Text style={styles.btnText}>Cancel</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+           onPress={() => {
+            getInvoicesList(selectedDate, selectedEndDate);
+            
+            setOpenDateModal(false); // ✅ close modal
+          }}
+
+            
+             
+              style={[
+                styles.saveButtonWrapLanguage,
+                { backgroundColor: Theme.colors.Green },
+              ]}
+            >
+              <Text style={styles.btnText}>Filter</Text>
+            </TouchableOpacity>
+            
+              </View>
+          </View>
+        }
+      />
     </View>
   );
 }

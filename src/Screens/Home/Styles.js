@@ -225,8 +225,9 @@ const styles = StyleSheet.create({
     fontSize:AppFonts.h6
   },
   saveButtonWrapLanguage:{
+    marginTop:getHeight(2),
     alignSelf:'center',
-    height:getHeight(4),
+    height:getHeight(3),
     width:getWidth(25),
     backgroundColor:Theme.colors.primary,
     alignItems:"center",
@@ -243,7 +244,7 @@ const styles = StyleSheet.create({
   btnText:{
     color:Theme.colors.white,
     fontFamily:Theme.fontFamily["Montserrat-Medium"],
-    fontSize:AppFonts.t0
+    fontSize:AppFonts.t1
   },
   deleteModalButtons:{
     marginTop:getHeight(2),
@@ -252,6 +253,33 @@ const styles = StyleSheet.create({
     // alignSelf:'center',
     justifyContent:'space-between',
     marginHorizontal:getWidth(12)
+
+  },
+  dateWrapper:{
+    height:getHeight(3.5),
+    width:getWidth(30),
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:Theme.borders.normalRadius,
+    borderWidth:0.5,
+
+
+  },
+  dateText:{
+    fontSize:AppFonts.t2,
+    fontFamily:Theme.fontFamily["Montserrat-Medium"],
+    color:Theme.colors.black
+  },
+  datePickerMainWrapper:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginHorizontal:getWidth(10)
+  },
+  actionButtonWrapper:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+    marginHorizontal:getWidth(15)
 
   }
 
